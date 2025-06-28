@@ -1,0 +1,194 @@
+{
+    "workbench.colorTheme": "Catppuccin Mocha",
+    "editor.wordWrap": "on",
+    "files.enableTrash": true,
+    "editor.minimap.enabled": false,
+    "workbench.startupEditor": "none",
+    "workbench.iconTheme": "catppuccin-mocha",
+    "editor.formatOnSave": true,
+    "ruff.enable": true,
+    "ruff.organizeImports": true,
+    "ruff.lineLength": 80,
+    "ruff.lint.enable": true,
+    "window.menuBarVisibility": "toggle",
+    "editor.codeActionsOnSave": {
+        "source.organizeImports.ruff": "explicit"
+    },
+    "[python]": {
+        "editor.defaultFormatter": "charliermarsh.ruff"
+    },
+    "editor.rulers": [
+        80
+    ],
+    "vim.useSystemClipboard": true,
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<Tab>"
+            ],
+            "commands": [
+                ":tabnext"
+            ]
+        },
+        {
+            "before": [
+                "<S-Tab>"
+            ],
+            "commands": [
+                ":tabprevious"
+            ]
+        },
+        {
+            "before": [
+                "<Space>",
+                "x"
+            ],
+            "commands": [
+                ":bd"
+            ]
+        },
+        {
+            "before": [
+                "<Space>",
+                "f",
+                "f"
+            ],
+            "commands": [
+                "workbench.action.quickOpen"
+            ] // Ctrl+P / Cmd+P
+        },
+        // Live grep (find word in files)
+        {
+            "before": [
+                "<Space>",
+                "f",
+                "w"
+            ],
+            "commands": [
+                "workbench.action.findInFiles"
+            ] // Ctrl+Shift+F
+        },
+        // File browser (like Telescope file_browser)
+        {
+            "before": [
+                "<Space>",
+                "f",
+                "b"
+            ],
+            "commands": [
+                "workbench.view.explorer"
+            ] // Open file explorer side pane
+        },
+        // Find open files in buffer (like Telescope buffers)
+        {
+            "before": [
+                "<Space>",
+                "f",
+                "z"
+            ],
+            "commands": [
+                "workbench.action.showAllEditors"
+            ] // Show open editors (buffers)
+        },
+        // Find word in current buffer (like Telescope current_buffer_fuzzy_find)
+        {
+            "before": [
+                "<Space>",
+                "f",
+                "k"
+            ],
+            "commands": [
+                "actions.find"
+            ] // Ctrl+F
+        },
+        {
+            "before": [
+                "K"
+            ],
+            "commands": [
+                "editor.action.showHover"
+            ]
+        },
+        {
+            "before": [
+                "<space>",
+                "l",
+                "r"
+            ],
+            "commands": [
+                "editor.action.rename"
+            ]
+        },
+        {
+            "before": [
+                "<space>",
+                "l",
+                "c"
+            ],
+            "commands": [
+                "editor.action.peekDefinition"
+            ]
+        },
+        {
+            "before": [
+                "<Space>",
+                "a",
+                "a"
+            ],
+            "commands": [
+                "workbench.panel.chat"
+                // "workbench.action.toggleAuxiliaryBar"
+            ]
+        },
+        {
+            "before": [
+                "<space>",
+                "d",
+                "s"
+            ],
+            "commands": [
+                "workbench.actions.view.problems"
+            ]
+        },
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<Space>",
+                "/"
+            ],
+            "commands": [
+                "editor.action.commentLine"
+            ]
+        },
+        {
+            "before": [
+                "space",
+                "a",
+                "e"
+            ],
+            "commands": [
+                "interactiveEditor.start"
+            ]
+        }
+    ],
+    "vim.useCtrlKeys": true,
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/dist": true,
+        "**/.git": true
+    },
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false
+    },
+    "editor.lineNumbers": "relative",
+    "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
+    "editor.fontFamily": "JetBrainsMono Nerd Font",
+    "workbench.navigationControl.enabled": false,
+    "workbench.layoutControl.enabled": false,
+    "chat.commandCenter.enabled": false,
+    "workbench.activityBar.location": "hidden",
+}

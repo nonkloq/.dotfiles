@@ -1,0 +1,29 @@
+[window]
+title = ""
+dynamic_title = false
+opacity = 1
+decorations = "none"
+blur = true
+
+[font]
+normal =  {family = "JetBrainsMono Nerd Font"}
+size = 12 
+
+[env]
+TERM = "xterm-256color"
+
+[general]
+
+import = [
+ "~/.config/alacritty/catppuccin-mocha.toml"
+  # "~/.config/alacritty/catppuccin-macchiato.toml"
+ #"~/.config/alacritty/catppuccin-latte.toml"
+  # "~/.config/alacritty/catppuccin-frappe.toml"
+]
+
+# [shell]
+# program = "/usr/bin/zellij"
+# args = ["new-session", "-A","-s", "general"]
+
+[cursor]
+style = "Block"

@@ -1,0 +1,56 @@
+[
+    {
+        "key": "ctrl+n",
+        "command": "workbench.view.explorer",
+        "when": "explorerViewletVisible == false"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "workbench.action.closeSidebar",
+        "when": "explorerViewletVisible == true"
+    },
+    // Alt+h → Toggle terminal
+    {
+        "key": "alt+h",
+        "command": "workbench.action.terminal.toggleTerminal"
+    },
+    {
+        "key": "tab",
+        "command": "selectNextSuggestion",
+        "when": "suggestWidgetVisible && !editorHasSnippetCompletions && !inSnippetMode"
+    },
+    // Navigate up in suggestion list with Shift+Tab
+    {
+        "key": "shift+tab",
+        "command": "selectPrevSuggestion",
+        "when": "suggestWidgetVisible && !editorHasSnippetCompletions && !inSnippetMode"
+    },
+    {
+        "key": "ctrl+alt+s",
+        "command": "workbench.action.toggleActivityBarVisibility"
+    },
+    {
+        // "a" to add a new file
+        "key": "a",
+        "command": "explorer.newFile",
+        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+    },
+    {
+        // "r" to rename
+        "key": "r",
+        "command": "renameFile",
+        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+    },
+    {
+        // "d" to delete
+        "key": "shift+d",
+        "command": "deleteFile",
+        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+    },
+    {
+        // "d" to delete (trash)
+        "key": "d",
+        "command": "moveFileToTrash",
+        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+    }
+]
