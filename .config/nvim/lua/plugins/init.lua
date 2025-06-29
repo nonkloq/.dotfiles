@@ -8,6 +8,29 @@ return {
     event = "BufWritePre", -- comment for format on save
     opts = require "configs.conform",
   },
+  {
+    "nvim-telescope/telescope.nvim",
+    opts = {
+      defaults = {
+        layout_config = {
+          width = 0.8,
+          height = 0.8,
+        },
+        sorting_strategy = "ascending",
+        border = true,
+        borderchars = {
+          prompt = { "─", "│", " ", "│", "╭", "╮", "│", "│" },
+          results = { "─", "│", "─", "│", "├", "┤", "╯", "╰" },
+          preview = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
+        },
+        winblend = 0,
+        prompt_prefix = "   ",
+        selection_caret = " ",
+        entry_prefix = "  ",
+        multi_icon = " ",
+      },
+    },
+  },
   -- {
   --   "neovim/nvim-lspconfig",
   --   config = function()
@@ -84,5 +107,35 @@ return {
     config = true,
     -- Depending on your nvim distro or config you may need to make the loading not lazy
     -- lazy=false,
+  },
+  {
+    "OXY2DEV/markview.nvim",
+    lazy = false,
+    opts = {
+      preview = {
+        filetypes = { "markdown", "Avante" },
+        ignore_buftypes = {},
+      },
+    },
+  },
+  {
+    -- support for image pasting
+    "HakonHarnes/img-clip.nvim",
+    event = "VeryLazy",
+    opts = {
+      -- recommended settings
+      default = {
+        embed_image_as_base64 = false,
+        prompt_for_file_name = false,
+        drag_and_drop = {
+          insert_mode = true,
+        },
+        -- required for Windows users
+        use_absolute_path = true,
+      },
+    },
+    keys = {
+      { "<leader>pi", "<cmd>PasteImage<cr>", desc = "Paste image from system clipboard" },
+    },
   },
 }

@@ -17,7 +17,7 @@ stow .
 
 ## Updating
 
-To update your dotfiles after making changes or adding new files:
+to create symbolic links to new files after adding them here, run this:
 
 ```bash
 cd ~/dotfiles

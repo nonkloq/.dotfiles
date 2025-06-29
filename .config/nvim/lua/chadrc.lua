@@ -7,28 +7,16 @@ local M = {}
 
 M.base46 = {
   theme = "catppuccin",
-  theme_toggle = { "catppuccin", "chadracula-evondev", "gruvchad" },
+  theme_toggle = { "catppuccin", "catppuccin", "gruvchad" },
   -- transparency = true,
   hl_override = {
     Comment = { italic = true },
-    ["@comment"] = { italic = true },
+    ["@comment"] = { italic = true, fg = "light_grey" },
   },
 }
 
 M.nvdash = {
-  load_on_startup = true,
-  header = {
-
-    "███╗   ██╗ ██████╗ ███╗   ██╗ ██████╗ ",
-    "████╗  ██║██╔═══██╗████╗  ██║██╔═══██╗",
-    "██╔██╗ ██║██║   ██║██╔██╗ ██║██║   ██║",
-    "██║╚██╗██║██║   ██║██║╚██╗██║██║▄▄ ██║",
-    "██║ ╚████║╚██████╔╝██║ ╚████║╚██████╔╝",
-    "╚═╝  ╚═══╝ ╚═════╝ ╚═╝  ╚═══╝ ╚══▀▀═╝ ",
-    "                                      ",
-    "           nonkloq.github.io         ",
-    "                                      ",
-  },
+  load_on_startup = false,
 }
 
 M.ui = {
@@ -44,7 +32,7 @@ M.ui = {
 }
 
 M.cheatsheet = {
-  theme = "simple",
+  theme = "grid",
 }
 
 M.mason = {

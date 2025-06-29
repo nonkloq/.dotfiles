@@ -13,7 +13,7 @@ return {
     },
     {
       "hrsh7th/nvim-cmp",
-      config = function(_, opts)
+      config = function(_, opts) -- updating defaults
         local cmp = require "cmp"
         table.insert(opts.sources, { name = "copilot", group_index = 2 })
         cmp.setup(opts)
@@ -22,10 +22,10 @@ return {
     {
       "CopilotC-Nvim/CopilotChat.nvim",
       dependencies = {
-        { "zbirenbaum/copilot.lua" }, -- already included above
+        { "zbirenbaum/copilot.lua" },
         { "nvim-lua/plenary.nvim" },
       },
-      build = "make tiktoken", -- Only on MacOS or Linux
+      build = "make tiktoken",
       config = function()
         require("CopilotChat").setup {}
       end,
@@ -38,10 +38,10 @@ return {
         "CopilotChatFix",
       },
       keys = {
-        { "<leader>cc", ":CopilotChatToggle<CR>", desc = "Copilot Chat" },
-        { "<leader>ce", ":'<,'>CopilotChatExplain<CR>", mode = "v", desc = "Explain Code" },
-        { "<leader>cf", ":'<,'>CopilotChatFix<CR>", mode = "v", desc = "Fix Code" },
-        { "<leader>cm", ":'<,'>CopilotChat<CR>", mode = "v", desc = "Modify selected code" },
+        { "<leader>cc", ":CopilotChatToggle<CR>", desc = "Copilot Copilot Chat" },
+        { "<leader>ce", ":'<,'>CopilotChatExplain<CR>", mode = "v", desc = "Copilot Explain Code" },
+        { "<leader>cf", ":'<,'>CopilotChatFix<CR>", mode = "v", desc = "Copilot Fix Code" },
+        { "<leader>cm", ":'<,'>CopilotChat<CR>", mode = "v", desc = "Copilot Modify selected code" },
       },
     },
     {
@@ -52,7 +52,6 @@ return {
         provider = "custom",
         providers = {
           custom = {
-
             __inherited_from = "openai",
             endpoint = os.getenv "CUSTOM_ENDPOINT",
             model = os.getenv "CUSTOM_MODEL",
@@ -65,42 +64,13 @@ return {
       },
       build = "make",
       dependencies = {
-        "nvim-treesitter/nvim-treesitter",
-        "stevearc/dressing.nvim",
         "nvim-lua/plenary.nvim",
         "MunifTanjim/nui.nvim",
-        --- The below dependencies are optional,
-        -- "echasnovski/mini.pick", -- for file_selector provider mini.pick
-        "nvim-telescope/telescope.nvim", -- for file_selector provider telescope
-        -- "hrsh7th/nvim-cmp", -- autocompletion for avante commands and mentions
-        -- "ibhagwan/fzf-lua", -- for file_selector provider fzf
-        -- "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
+        "nvim-telescope/telescope.nvim", -- file_picker provider
+        "hrsh7th/nvim-cmp", -- autocompletion for avante commands and mentions
+        "nvim-tree/nvim-web-devicons", -- for icons
+        "folke/snacks.nvim", -- for input provider snacks
         "zbirenbaum/copilot.lua", -- for providers='copilot'
-        {
-          -- support for image pasting
-          "HakonHarnes/img-clip.nvim",
-          event = "VeryLazy",
-          opts = {
-            -- recommended settings
-            default = {
-              embed_image_as_base64 = false,
-              prompt_for_file_name = false,
-              drag_and_drop = {
-                insert_mode = true,
-              },
-              -- required for Windows users
-              use_absolute_path = true,
-            },
-          },
-        },
-        {
-          -- Make sure to set this up properly if you have lazy=true
-          "MeanderingProgrammer/render-markdown.nvim",
-          opts = {
-            file_types = { "markdown", "Avante" },
-          },
-          ft = { "markdown", "Avante" },
-        },
       },
     },
   },
