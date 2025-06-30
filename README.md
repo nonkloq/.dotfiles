@@ -27,6 +27,7 @@ stow .
 ## alist
 
 - nvim
+- doom emacs (mostly used for org and org-roam)
 - tmux
 - zsh
 - starship prompt
