@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: Math Block
+# key: imb
+# --
+\\[
+$0\\]

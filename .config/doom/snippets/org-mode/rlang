@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: R Code Block
+# key: r
+# --
+#+begin_src R
+$0
+#+end_src

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Python Code Block with Output
+# key: py
+# --
+#+begin_src python :session la
+$0
+#+end_src

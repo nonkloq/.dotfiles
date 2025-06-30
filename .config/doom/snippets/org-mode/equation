@@ -1,0 +1,6 @@
+# name: Equation Block
+# key: eq
+# --
+\\begin{align*}
+$0
+\\end{align*}
