@@ -27,6 +27,38 @@ local file_picker_maps = {
     desc = "Picker Smart Find Files",
   },
   {
+    "<leader>ff",
+    function()
+      Snacks.picker.files()
+    end,
+    desc = "Picker Search Files",
+  },
+  {
+    "<leader>fb",
+    function()
+      Snacks.picker.buffers()
+    end,
+    desc = "Picker Search Buffers.",
+  },
+  {
+    "<leader>fw",
+    function()
+      Snacks.picker.grep()
+    end,
+    desc = "Picker Search Live Grep",
+  },
+  {
+    "<leader>fa",
+    function()
+      Snacks.picker.files {
+        hidden = true,
+        ignored = true,
+        no_ignore_parent = true,
+      }
+    end,
+    desc = "Picker Search All Files",
+  },
+  {
     "<leader>:",
     function()
       Snacks.picker.command_history()
@@ -387,7 +419,7 @@ local other_maps = {
     desc = "Search Scratch Buffer",
   },
   {
-    "<leader>bd",
+    "<leader>x",
     function()
       Snacks.bufdelete()
     end,
@@ -450,12 +482,7 @@ return {
   "folke/snacks.nvim",
   priority = 1000,
   lazy = false,
-  dependencies = {
-    "folke/todo-comments.nvim",
-    config = function()
-      require("todo-comments").setup {}
-    end,
-  },
+  ---@type snacks.Config
   opts = {
 
     dashboard = dbopts,
@@ -478,7 +505,13 @@ return {
     },
 
     terminal = { enabled = false },
-    notifier = { enabled = false },
+    notifier = {
+      enabled = true,
+      timeout = 3000,
+      top_down = false,
+      margin = { top = 0, right = 1, bottom = 0 },
+      style = "compact",
+    },
   },
   keys = concat_lists(file_picker_maps, git_maps, grep_maps, search_maps, lsp_maps, other_maps),
   init = function()
@@ -503,7 +536,7 @@ return {
         Snacks.toggle
           .option("conceallevel", { off = 0, on = vim.o.conceallevel > 0 and vim.o.conceallevel or 2 })
           :map "<leader>uc"
-        -- Snacks.toggle.treesitter():map "<leader>uT"
+        Snacks.toggle.treesitter():map "<leader>uT"
 
         Snacks.toggle.inlay_hints():map "<leader>uh"
         Snacks.toggle.indent():map "<leader>ug"

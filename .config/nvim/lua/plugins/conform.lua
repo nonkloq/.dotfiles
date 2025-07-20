@@ -69,4 +69,19 @@ local options = {
   },
 }
 
-return options
+return {
+  "stevearc/conform.nvim",
+  event = { "BufWritePre" },
+  cmd = { "ConformInfo" },
+  opts = options,
+  keys = {
+    {
+      "<leader>cf",
+      function()
+        require("conform").format { async = true, lsp_format = "fallback" }
+      end,
+      mode = "n",
+      desc = "Format buffer",
+    },
+  },
+}
