@@ -109,14 +109,12 @@ return {
     -- lazy=false,
   },
   {
-    "OXY2DEV/markview.nvim",
-    lazy = false,
+    "MeanderingProgrammer/render-markdown.nvim",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
     opts = {
-      preview = {
-        filetypes = { "markdown", "Avante" },
-        ignore_buftypes = {},
-      },
+      file_types = { "markdown", "Avante" },
     },
+    ft = { "markdown", "Avante" },
   },
   {
     -- support for image pasting
@@ -137,5 +135,10 @@ return {
     keys = {
       { "<leader>pi", "<cmd>PasteImage<cr>", desc = "Paste image from system clipboard" },
     },
+  },
+  {
+    "mrcjkb/rustaceanvim",
+    version = "^6", -- Recommended
+    lazy = false, -- This plugin is already lazy
   },
 }

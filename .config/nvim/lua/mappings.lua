@@ -78,3 +78,18 @@ map("n", "<leader>fa", function()
     no_ignore_parent = true,
   }
 end, { desc = "Picker Search All Files" })
+
+-- rustaceanvim
+local bufnr = vim.api.nvim_get_current_buf()
+map("n", "<leader>la", function()
+  -- vim.cmd.RustLsp "codeAction" -- supports rust-analyzer's grouping
+  vim.lsp.buf.codeAction() -- or if you don't want grouping.
+end, { silent = true, buffer = bufnr })
+map(
+  "n",
+  "K", -- Override Neovim's built-in hover keymap with rustaceanvim's hover actions
+  function()
+    vim.cmd.RustLsp { "hover", "actions" }
+  end,
+  { silent = true, buffer = bufnr }
+)
