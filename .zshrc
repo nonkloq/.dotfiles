@@ -182,3 +182,7 @@ source <(fzf --zsh)
 [ -f "$HOME/.env" ] && source "$HOME/.env"
 
 export PATH="$HOME/.local/bin:$PATH"
+
+# to test different nvim configs
+alias nv1='NVIM_APPNAME="nvown" nvim'
+alias nv2='NVIM_APPNAME="testt" nvim'
