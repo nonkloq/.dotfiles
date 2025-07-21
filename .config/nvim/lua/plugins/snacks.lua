@@ -489,22 +489,17 @@ return {
     animate = { enabled = true },
     bigfile = { enabled = true },
     explorer = { enabled = true },
-    indent = { enabled = true },
+    indent = {
+      enabled = true,
+    },
     input = { enabled = true },
     bufdelete = { enabled = true },
     picker = { enabled = true },
     quickfile = { enabled = true },
     scope = { enabled = true },
     scroll = { enabled = true },
-    statuscolumn = { enabled = true },
     words = { enabled = true },
     image = { enabled = true },
-
-    styles = {
-      default = { border = "rounded" },
-    },
-
-    terminal = { enabled = false },
     notifier = {
       enabled = true,
       timeout = 3000,
@@ -512,6 +507,13 @@ return {
       margin = { top = 0, right = 1, bottom = 0 },
       style = "compact",
     },
+
+    styles = {
+      default = { border = "rounded" },
+    },
+
+    terminal = { enabled = false },
+    statuscolumn = { enabled = false },
   },
   keys = concat_lists(file_picker_maps, git_maps, grep_maps, search_maps, lsp_maps, other_maps),
   init = function()

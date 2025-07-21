@@ -1,5 +1,4 @@
 return {
-
   -- theme
   { "catppuccin/nvim", name = "catppuccin", priority = 1000, opts = { flavour = "mocha" } },
 
@@ -108,7 +107,7 @@ return {
     opts = { enable = false },
   },
 
-  -- rusl lsp extensive support
+  -- extensive rust support
   {
     "mrcjkb/rustaceanvim",
     version = "^6", -- Recommended
