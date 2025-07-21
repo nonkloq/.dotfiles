@@ -104,7 +104,7 @@ return {
   {
     "m4xshen/hardtime.nvim",
     lazy = false,
-    opts = { enable = false },
+    opts = { enabled = false },
   },
 
   -- extensive rust support
