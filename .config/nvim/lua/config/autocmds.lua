@@ -22,8 +22,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
     map("gd", vim.lsp.buf.definition, "Goto definition")
     map("gD", vim.lsp.buf.declaration, "Goto Declaration")
     map("ds", vim.diagnostic.setloclist, "Show Diagnostics in Location List")
-    map("<leader>la", vim.lsp.buf.code_action, "Code Action")
-    map("<leader>lr", vim.lsp.buf.rename, "Rename all references")
+    map("<leader>ca", vim.lsp.buf.code_action, "Code Action")
+    map("<leader>cr", vim.lsp.buf.rename, "Rename all references")
     map("<leader>lf", vim.lsp.buf.format, "Format")
     map("<leader>v", "<cmd>vsplit | lua vim.lsp.buf.definition()<cr>", "Goto Definition in Vertical Split")
 

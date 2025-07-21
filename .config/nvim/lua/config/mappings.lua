@@ -145,7 +145,7 @@ map("n", "<leader>ct", ":ColorizerToggle<CR>", { noremap = true, silent = true, 
 map("n", "<leader>ht", ":Hardtime toggle<CR>", { noremap = true, silent = true, desc = "Toggle Hardtime" })
 
 -- Key mapping to trigger lspsaga commands
-map("n", "<leader>lsr", "<cmd>Lspsaga rename<CR>", { noremap = true, silent = true, desc = "LSP Rename with Lspsaga" })
+map("n", "<leader>lr", "<cmd>Lspsaga rename<CR>", { noremap = true, silent = true, desc = "LSP Rename with Lspsaga" })
 map(
   "n",
   "<leader>lo",
@@ -177,9 +177,4 @@ map(
   "<cmd>Lspsaga peek_type_definition<CR>",
   { noremap = true, silent = true, desc = "LSP Peek Type Defenition" }
 )
-map(
-  "n",
-  "<leader>lsa",
-  "<cmd>Lspsaga code_action<CR>",
-  { noremap = true, silent = true, desc = "LSP View Code Action" }
-)
+map("n", "<leader>la", "<cmd>Lspsaga code_action<CR>", { noremap = true, silent = true, desc = "LSP View Code Action" })
