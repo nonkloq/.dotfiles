@@ -82,13 +82,3 @@ vim.diagnostic.config {
     },
   },
 }
-
--- to make the snacks ghost texts visible
--- vim.api.nvim_set_hl(0, "SnacksPickerDir", { link = "Comment" })
--- vim.api.nvim_set_hl(0, "SnacksPickerPathHidden", { link = "Comment" })
--- vim.api.nvim_set_hl(0, "SnacksPickerPathIgnored", { link = "Comment" })
--- vim.api.nvim_set_hl(0, "SnacksPickerGitStatusUntracked", { link = "Special" })
---
--- vim.api.nvim_set_hl(0, "SnacksPickerInputTitle", { link = "TelescopePromptTitle" })
--- vim.api.nvim_set_hl(0, "SnacksPickerTitle", { link = "TelescopePreviewTitle" })
--- vim.api.nvim_set_hl(0, "SnacksPickerFooter", { link = "TelescopeResultsTitle" })

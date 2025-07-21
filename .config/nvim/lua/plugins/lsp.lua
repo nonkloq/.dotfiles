@@ -7,7 +7,7 @@ local mason_ensure_installed = {
   "prettierd",
   "clang-format",
   "eslint-lsp",
-  "rust-analyzer",
+  -- "rust-analyzer", -- using rustacean.nvim
   "pylyzer",
   "pyright",
   "python-lsp-server",

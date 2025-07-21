@@ -1,4 +1,8 @@
 return {
+
+  -- theme
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000, opts = { flavour = "mocha" } },
+
   -- pretty document
   {
     "MeanderingProgrammer/render-markdown.nvim",
@@ -98,9 +102,16 @@ return {
   },
 
   -- just to learn motion
-  -- {
-  --   "m4xshen/hardtime.nvim",
-  --   lazy = false,
-  --   opts = {},
-  -- },
+  {
+    "m4xshen/hardtime.nvim",
+    lazy = false,
+    opts = { enable = false },
+  },
+
+  -- rusl lsp extensive support
+  {
+    "mrcjkb/rustaceanvim",
+    version = "^6", -- Recommended
+    lazy = false, -- This plugin is already lazy
+  },
 }

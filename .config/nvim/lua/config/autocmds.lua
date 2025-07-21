@@ -1,4 +1,3 @@
--- LSP Auto command
 vim.api.nvim_create_autocmd("TextYankPost", {
   desc = "Highlight when yanking (copying) text",
   group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
@@ -20,6 +19,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     map("ld", vim.diagnostic.open_float, "Open Diagnostic Float")
     map("K", vim.lsp.buf.hover, "Hover Documentation")
     map("gs", vim.lsp.buf.signature_help, "Signature Documentation")
+    -- map("ds", vim.diagostic.setloclist, "Set Diagnostic Location List")
     map("gd", vim.lsp.buf.definition, "Goto definition")
     map("gD", vim.lsp.buf.declaration, "Goto Declaration")
     map("<leader>la", vim.lsp.buf.code_action, "Code Action")

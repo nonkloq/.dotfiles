@@ -5,3 +5,4 @@ require "config.autocmds"
 
 -- theme setup
 vim.cmd.colorscheme "catppuccin"
+require "config.highlights"
