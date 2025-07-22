@@ -5,8 +5,11 @@ return {
 
     theme = "auto",
     options = {
-      component_separators = { left = "", right = "" },
-      section_separators = { left = "", right = "" },
+      -- use straight lines
+      component_separators = { left = "│", right = "│" },
+      section_separators = { left = "", right = "" },
+      -- component_separators = { left = "", right = "" },
+      -- section_separators = { left = "", right = "" },
     },
 
     sections = {
