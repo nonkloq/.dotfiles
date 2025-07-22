@@ -52,5 +52,5 @@
         "key": "d",
         "command": "moveFileToTrash",
         "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
-    }
+    },
 ]

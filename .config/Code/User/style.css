@@ -1,0 +1,137 @@
+/* Project Title */
+.window-appicon {
+    display: none !important;
+}
+
+/* Scroll Bar */
+.slider {
+    position: absolute !important;
+    right: 1px !important;
+    width: 1px !important;
+    background: #bc9abc !important;
+    left: auto !important;
+}
+
+/* Search Label */
+.search-label {
+    font-size: 14px !important;
+    color: #fff;
+    display: block;
+}
+
+/* Search icon */
+.search-icon {
+    display: none !important;
+}
+
+.codicon-search::before {
+    display: none !important;
+}
+
+.codicon-arrow-right,
+.codicon-arrow-left {
+    display: none !important;
+}
+
+
+.command-center-center {
+    width: auto !important;
+}
+
+/* Command Palette */
+.quick-input-widget {
+    transform: translateY(-50%) !important;
+    top: 50% !important;
+    box-shadow: 0px 8px 32px rgba(0, 0, 0, .35) !important;
+    border: 1px solid #cba6f7e6 !important;
+    padding: 8px 8px 14px 14px !important;
+    font-family: "JetBrainsMono Nerd Font" !important;
+    backdrop-filter: blur(3px) !important;
+    border-radius: 20px !important;
+}
+
+.quick-input-list,
+.quick-input-list .list_id_6 {
+    min-height: 400px !important;
+}
+
+/* Remove background for lists */
+.monaco-list-rows {
+    background: transparent !important;
+}
+
+/* Command palette text input */
+.quick-input-filter .monaco-inputbox {
+    border-radius: 12px !important;
+    padding: 3px !important;
+    border: none !important;
+    font-size: 14px !important;
+    font-family: "JetBrainsMono Nerd Font" !important;
+    margin-bottom: 8px !important;
+}
+
+/* Actions after command palette text input */
+.quick-input-inline-action-bar .actions-container .action-item {
+    margin-bottom: 8px !important;
+}
+
+.quick-input-header {
+    align-items: center;
+}
+
+/* Command palette's input box placeholder. */
+.monaco-inputbox input::placeholder {
+    color: #9399b2e5 !important;
+}
+
+/* Container that holds the VS Code home icon. */
+.editor-group-watermark {
+    max-width: none !important;
+}
+
+.letterpress {
+    background-image: none !important;
+    background-repeat: no-repeat no-repeat !important;
+    background-position: center center !important;
+    background-size: contain !important;
+}
+
+/* File explorer */
+/* File explorer action buttons */
+.monaco-workbench .part.sidebar .title-actions .actions-container {
+    display: none;
+}
+
+/* File Explorer Item Label */
+.monaco-tree .monaco-tree-row .label-name .explorer-item-edited,
+.monaco-list .monaco-list-row .monaco-icon-label .label-name {
+    font-family: "JetBrainsMono Nerd Font" !important;
+}
+
+/* Sidebar title */
+.composite.title {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-items: center !important;
+}
+
+.composite.title h2 {
+    font-weight: bold !important;
+    font-size: 12px !important;
+    text-transform: uppercase;
+}
+
+/* Make status bar look like lualine */
+.monaco-workbench .statusbar {
+    /* background-color: #1e1e2e !important;
+    color: #cdd6f4 !important; */
+    font-family: 'JetBrainsMono Nerd Font', monospace !important;
+    font-size: 12px !important;
+}
+
+/* Add padding and separators */
+.statusbar-item {
+    padding: 0 2px !important;
+    border-right: 1px solid #6c7086 !important;
+}
