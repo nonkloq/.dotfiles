@@ -9,7 +9,7 @@ return {
       enable = true,
       use_languagetree = true,
     },
-    indent = { enable = true },
+    indent = { enable = false }, -- using snacks indent instead
     ensure_installed = {
       "vim",
       "lua",

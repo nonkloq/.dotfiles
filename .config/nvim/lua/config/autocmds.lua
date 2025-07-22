@@ -17,13 +17,13 @@ vim.api.nvim_create_autocmd("LspAttach", {
     -- https://neovim.io/doc/user/news-0.11.html#_defaults
 
     map("ld", vim.diagnostic.open_float, "Open Diagnostic Float")
-    map("K", vim.lsp.buf.hover, "Hover Documentation")
+    map("<leader>lh", vim.lsp.buf.hover, "Hover Documentation")
     map("gs", vim.lsp.buf.signature_help, "Signature Documentation")
     map("gd", vim.lsp.buf.definition, "Goto definition")
     map("gD", vim.lsp.buf.declaration, "Goto Declaration")
     map("ds", vim.diagnostic.setloclist, "Show Diagnostics in Location List")
     map("<leader>ca", vim.lsp.buf.code_action, "Code Action")
-    map("<leader>cr", vim.lsp.buf.rename, "Rename all references")
+    map("<leader>lr", vim.lsp.buf.rename, "Rename all references")
     map("<leader>lf", vim.lsp.buf.format, "Format")
     map("<leader>v", "<cmd>vsplit | lua vim.lsp.buf.definition()<cr>", "Goto Definition in Vertical Split")
 

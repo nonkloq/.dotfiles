@@ -15,10 +15,10 @@ vim.api.nvim_set_hl(0, "SnacksPickerTitle", { link = "TelescopePreviewTitle" })
 vim.api.nvim_set_hl(0, "SnacksPickerFooter", { link = "TelescopeResultsTitle" })
 
 -- remove bg highglight in diagnostics virtual text
-vim.api.nvim_set_hl(0, "DiagnosticVirtualTextOk", { link = "DiagnosticSignHint" })
-vim.api.nvim_set_hl(0, "DiagnosticVirtualTextHint", { link = "DiagnosticSignInfo" })
-vim.api.nvim_set_hl(0, "DiagnosticVirtualTextInfo", { link = "DiagnosticSignWarn" })
-vim.api.nvim_set_hl(0, "DiagnosticVirtualTextWarn", { link = "DiagnosticSignError" })
+vim.api.nvim_set_hl(0, "DiagnosticVirtualTextOk", { link = "DiagnosticSignOk" })
+vim.api.nvim_set_hl(0, "DiagnosticVirtualTextHint", { link = "DiagnosticSignHint" })
+vim.api.nvim_set_hl(0, "DiagnosticVirtualTextInfo", { link = "DiagnosticSignInfo" })
+vim.api.nvim_set_hl(0, "DiagnosticVirtualTextWarn", { link = "DiagnosticSignWarn" })
 vim.api.nvim_set_hl(0, "DiagnosticVirtualTextError", { link = "DiagnosticSignError" })
 
 -- nvimtree window picker to show non highglighted pane

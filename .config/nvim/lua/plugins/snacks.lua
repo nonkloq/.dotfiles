@@ -377,14 +377,14 @@ local lsp_maps = {
     function()
       Snacks.picker.lsp_symbols()
     end,
-    desc = "LSP Symbols",
+    desc = "Search LSP Symbols",
   },
   {
     "<leader>sS",
     function()
       Snacks.picker.lsp_workspace_symbols()
     end,
-    desc = "LSP Workspace Symbols",
+    desc = "Search LSP Workspace Symbols",
   },
 }
 
@@ -491,14 +491,29 @@ return {
     explorer = { enabled = true },
     indent = {
       enabled = true,
+      -- too colorful
+      -- indent = {
+      --   hl = {
+      --     "SnacksIndent1",
+      --     "SnacksIndent2",
+      --     "SnacksIndent3",
+      --     "SnacksIndent4",
+      --     "SnacksIndent5",
+      --     "SnacksIndent6",
+      --     "SnacksIndent7",
+      --     "SnacksIndent8",
+      --   },
+      -- },
     },
-    input = { enabled = true },
+    input = { enabled = true, win = { width = 40, relative = "cursor", row = -3, col = 0 } },
     bufdelete = { enabled = true },
-    picker = { enabled = true },
+    -- vertical, vscode, telescope, ivy, ivy_split, select, left, right, dropdown, sidebar
+    picker = { layout = { preset = "default" }, enabled = true },
     quickfile = { enabled = true },
     scope = { enabled = true },
     scroll = { enabled = true },
     words = { enabled = true },
+    toggle = { enabled = true },
     image = { enabled = true },
     notifier = {
       enabled = true,

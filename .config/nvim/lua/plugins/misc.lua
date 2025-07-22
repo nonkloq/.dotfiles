@@ -2,6 +2,14 @@ return {
   -- theme
   { "catppuccin/nvim", name = "catppuccin", priority = 1000, opts = { flavour = "mocha" } },
 
+  -- undo tree
+  {
+    "mbbill/undotree",
+    keys = {
+      { "<leader>ut", "<cmd>UndotreeToggle<CR>", desc = "Toggle Undotree" },
+    },
+  },
+
   -- pretty document
   {
     "MeanderingProgrammer/render-markdown.nvim",
