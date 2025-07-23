@@ -10,7 +10,7 @@
     "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
     "editor.fontFamily": "JetBrainsMono Nerd Font",
     "editor.fontLigatures": true,
-    "editor.suggestFontSize": 16,
+    "editor.suggestFontSize": 14,
     // "editor.suggestLineHeight": 30,
     // "terminal.integrated.lineHeight": 1.5,
     "terminal.integrated.fontSize": 16,

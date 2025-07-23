@@ -8,7 +8,7 @@ install [GNU Stow](https://www.gnu.org/software/stow/) `yay -S stow`
 clone this in homedir
 
 ```bash
-cd ~/dotfiles
+cd ~/.dotfiles
 stow .
 ```
 
@@ -20,7 +20,7 @@ stow .
 to create symbolic links to new files after adding them here, run this:
 
 ```bash
-cd ~/dotfiles
+cd ~/.dotfiles
 stow .
 ```
 
