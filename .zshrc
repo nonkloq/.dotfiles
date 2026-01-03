@@ -111,6 +111,8 @@ source $ZSH/oh-my-zsh.sh
 alias open="xdg-open"
 alias nv="nvim"
 alias ff="clear; fastfetch"
+alias fax="clear; fortune | cowsay -f sus"
+alias akshuly="cowsay -f actually"
 export PATH="$HOME/.config/emacs/bin:$PATH"
 export MANPAGER="nvim +Man!"
 export BAT_THEME=gruvbox-dark
@@ -186,3 +188,5 @@ export PATH="$HOME/.local/bin:$PATH"
 # to test different nvim configs
 alias nv1='NVIM_APPNAME="nvown" nvim'
 alias nv2='NVIM_APPNAME="testt" nvim'
+# zoxide config
+eval "$(zoxide init zsh --cmd=c)"
