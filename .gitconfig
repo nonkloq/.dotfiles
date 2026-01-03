@@ -3,3 +3,5 @@
   name = satz
 [core]
 	symlinks = true
+[init]
+    defaultBranch = main
