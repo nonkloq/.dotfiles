@@ -24,8 +24,9 @@ return {
 
   -- view jupyter notebooks in nvim
   {
-    "GCBallesteros/jupytext.nvim",
-    config = true,
+    "goerz/jupytext.nvim",
+    version = "0.2.0",
+    opts = {}, -- see Options
     -- Depending on your nvim distro or config you may need to make the loading not lazy
     -- lazy=false,
   },

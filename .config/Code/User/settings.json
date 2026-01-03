@@ -6,7 +6,6 @@
     ],
     "window.zoomLevel": 1,
     "editor.lineNumbers": "relative",
-    "window.menuBarVisibility": "compact",
     "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
     "editor.fontFamily": "JetBrainsMono Nerd Font",
     "editor.fontLigatures": true,
@@ -19,9 +18,9 @@
     "workbench.editor.showTabs": "none",
     // "workbench.editor.enablePreview": false,
     // "breadcrumbs.enabled": false,
-    "scm.diffDecorations": "none",
+    "scm.diffDecorations": "gutter",
     "editor.hover.delay": 1500,
-    "editor.hover.enabled": true,
+    "editor.hover.enabled": "on",
     // "editor.matchBrackets": "never",
     "workbench.tips.enabled": false,
     // "editor.colorDecorators": false,
@@ -30,7 +29,7 @@
     "editor.lightbulb.enabled": "off",
     // "editor.selectionHighlight": false,
     "editor.overviewRulerBorder": false,
-    "editor.renderLineHighlight": "none",
+    "editor.renderLineHighlight": "line",
     "editor.occurrencesHighlight": "off",
     // "problems.decorations.enabled": false,
     "editor.renderControlCharacters": false,
@@ -70,7 +69,7 @@
         "**/venv": true,
         "**/.venv": true,
     },
-    "python.analysis.typeCheckingMode": "basic",
+    "autoDocstring.docstringFormat": "google",
     "python.analysis.autoImportCompletions": true,
     "sqliteViewer.maxFileSize": 2048,
     // -- Mappings to mimic my Neovim config
@@ -235,6 +234,26 @@
         "file:///home/satz/.config/Code/User/style.css",
     ],
     "vscode_custom_css.statusbar": false,
-    "workbench.activityBar.location": "hidden",
     "workbench.layoutControl.enabled": false,
+    "window.menuBarVisibility": "compact",
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": true,
+        "markdown": false,
+        "scminput": false
+    },
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "workbench.editor.empty.hint": "hidden",
+    "chat.tools.terminal.autoApprove": {
+        "python3": true,
+        "/^uv run pytest tests/goldp/test_range_proximity\\.py -v$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "uv": true
+    },
+    "chat.mcp.gallery.enabled": true,
+    "lean4.alwaysAskBeforeInstallingLeanVersions": true,
+    "notebook.output.wordWrap": true,
+    "workbench.activityBar.location": "hidden"
 }

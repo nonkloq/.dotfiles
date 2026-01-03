@@ -52,21 +52,33 @@ map("n", "<Esc>", "<cmd>noh<CR>", { noremap = true, silent = true, desc = "Remov
 
 -- terminal
 local Terminal = require("toggleterm.terminal").Terminal
+local horizontal, vertical, floating, tabbed
 
-local horizontal = Terminal:new { direction = "horizontal", name = "hterm", hidden = true }
-local vertical = Terminal:new { direction = "vertical", name = "vterm", hidden = true }
-local floating = Terminal:new { direction = "float", name = "fterm", hidden = true }
-local tabbed = Terminal:new { direction = "tab", name = "tterm", hidden = true }
 map({ "n", "t" }, "<M-h>", function()
+  if not horizontal then
+    horizontal = Terminal:new { direction = "horizontal", display_name = "hterm", hidden = true }
+  end
   horizontal:toggle()
 end, { desc = "Toggle Horizontal terminal" })
+
 map({ "n", "t" }, "<M-v>", function()
+  if not vertical then
+    vertical = Terminal:new { direction = "vertical", display_name = "vterm", hidden = true }
+  end
   vertical:toggle()
 end, { desc = "Toggle Vertical terminal" })
+
 map({ "n", "t" }, "<M-i>", function()
+  if not floating then
+    floating = Terminal:new { direction = "float", display_name = "fterm", hidden = true }
+  end
   floating:toggle()
 end, { desc = "Toggle Floating terminal" })
+
 map({ "n", "t" }, "<M-t>", function()
+  if not tabbed then
+    tabbed = Terminal:new { direction = "tab", display_name = "tterm", hidden = true }
+  end
   tabbed:toggle()
 end, { desc = "Toggle Tab terminal" })
 -- map(

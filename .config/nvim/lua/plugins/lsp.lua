@@ -12,6 +12,7 @@ local mason_ensure_installed = {
   "pyright",
   "python-lsp-server",
   "clangd",
+  "gopls",
 }
 
 local dont_enable = {
@@ -27,7 +28,7 @@ local servers = {
   ts_ls = {},
   lua_ls = {},
   eslint = {},
-  rust_analyzer = {},
+  -- rust_analyzer = {},
   clangd = {},
 
   pyright = {
@@ -45,6 +46,7 @@ local servers = {
   },
 
   pylsp = {},
+  gopls = {},
 
   ruff = {
     init_options = {

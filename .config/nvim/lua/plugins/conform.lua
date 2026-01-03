@@ -49,9 +49,6 @@ for _, ft in ipairs(clang_types) do
 end
 
 local user_defined_formatters = {
-  ruff_format = {
-    prepend_args = { "--line-length", "80" },
-  },
   rustfmt = {
     prepend_args = { "--config", "max_width=80" },
   },

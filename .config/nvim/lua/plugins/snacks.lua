@@ -79,6 +79,20 @@ local file_picker_maps = {
     end,
     desc = "Picker Search Config File",
   },
+
+  {
+    "<leader>fd",
+    function()
+      Snacks.picker.files {
+        cwd = "~/.dotfiles",
+        hidden = true,
+        ignored = true,
+        no_ignore_parent = true,
+      }
+    end,
+    desc = "Picker Search dotfiles",
+  },
+
   {
     "<leader>fg",
     function()

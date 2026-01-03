@@ -1,60 +1,61 @@
-return {
-  {
-    "zbirenbaum/copilot.lua",
-    cmd = "Copilot", -- lazy-load on command
-    event = "InsertEnter", -- or load when entering insert mode
-    opts = {
-      suggestion = { enabled = false },
-      panel = { enabled = false },
-      filetypes = {
-        markdown = true,
-        help = true,
-      },
-    },
-  },
-  {
-    "saghen/blink.cmp",
-    optional = true,
-    dependencies = { "fang2hou/blink-copilot" },
-    opts = {
-      sources = {
-        default = { "copilot" },
-        providers = {
-          copilot = {
-            name = "copilot",
-            module = "blink-copilot",
-            score_offset = 100,
-            async = true,
-            opts = {
-              max_completions = 1,
-              max_attempts = 1,
-            },
-          },
-        },
-      },
-    },
-  },
-  {
-    "CopilotC-Nvim/CopilotChat.nvim",
-    dependencies = {
-      { "zbirenbaum/copilot.lua" },
-      { "nvim-lua/plenary.nvim" },
-    },
-    build = "make tiktoken",
-    opts = {},
-    cmd = {
-      "CopilotChat",
-      "CopilotChatToggle",
-      "CopilotChatVisual",
-      "CopilotChatExplain",
-      "CopilotChatReview",
-      "CopilotChatFix",
-    },
-    keys = {
-      { "<leader>cc", ":CopilotChatToggle<CR>", desc = "Copilot Copilot Chat" },
-      { "<leader>ce", ":CopilotChatExplain<CR>", mode = "v", desc = "Copilot Explain Code" },
-      { "<leader>cf", ":CopilotChatFix<CR>", mode = "v", desc = "Copilot Fix Code" },
-      { "<leader>cm", ":CopilotChat<CR>", mode = "v", desc = "Copilot Modify selected code" },
-    },
-  },
-}
+return {}
+-- return {
+--   {
+--     "zbirenbaum/copilot.lua",
+--     cmd = "Copilot", -- lazy-load on command
+--     event = "InsertEnter", -- or load when entering insert mode
+--     opts = {
+--       suggestion = { enabled = false },
+--       panel = { enabled = false },
+--       filetypes = {
+--         markdown = true,
+--         help = true,
+--       },
+--     },
+--   },
+--   {
+--     "saghen/blink.cmp",
+--     optional = true,
+--     dependencies = { "fang2hou/blink-copilot" },
+--     opts = {
+--       sources = {
+--         default = { "copilot" },
+--         providers = {
+--           copilot = {
+--             name = "copilot",
+--             module = "blink-copilot",
+--             score_offset = 100,
+--             async = true,
+--             opts = {
+--               max_completions = 3,
+--               max_attempts = 1,
+--             },
+--           },
+--         },
+--       },
+--     },
+--   },
+--   {
+--     "CopilotC-Nvim/CopilotChat.nvim",
+--     dependencies = {
+--       { "zbirenbaum/copilot.lua" },
+--       { "nvim-lua/plenary.nvim" },
+--     },
+--     build = "make tiktoken",
+--     opts = {},
+--     cmd = {
+--       "CopilotChat",
+--       "CopilotChatToggle",
+--       "CopilotChatVisual",
+--       "CopilotChatExplain",
+--       "CopilotChatReview",
+--       "CopilotChatFix",
+--     },
+--     keys = {
+--       { "<leader>cc", ":CopilotChatToggle<CR>", desc = "Copilot Copilot Chat" },
+--       { "<leader>ce", ":CopilotChatExplain<CR>", mode = "v", desc = "Copilot Explain Code" },
+--       { "<leader>cf", ":CopilotChatFix<CR>", mode = "v", desc = "Copilot Fix Code" },
+--       { "<leader>cm", ":CopilotChat<CR>", mode = "v", desc = "Copilot Modify selected code" },
+--     },
+--   },
+-- }
