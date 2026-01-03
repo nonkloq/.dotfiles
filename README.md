@@ -1,6 +1,6 @@
 # dotfiles
 
-managing my fka$$ configs in a remote repo to avoid redoing ts.
+custom config files for some of the softwares that i use
 
 ## Installation
 
@@ -12,8 +12,9 @@ cd ~/.dotfiles
 stow .
 ```
 
-> NOTE: Backup or remove the existing files before creating symbolic links
-> Use `stow --adopt .` with caution. This command should only be used if you are certain that the files in this repository are dummy/not required and any existing files in the target directories are the real config files.
+> [!NOTE]
+> Backup or remove the existing files before creating symbolic links
+> Use `stow --adopt .` with caution. This command should only be used if you are certain that the files in this folder are dummy/not required and any existing files in the target directories are the real config files.
 
 ## Updating
 
@@ -24,7 +25,7 @@ cd ~/.dotfiles
 stow .
 ```
 
-## alist
+## Bin List
 
 - nvim
 - doom emacs (mostly used for org and org-roam)
@@ -35,8 +36,3 @@ stow .
 - alacritty
 - kitty
 - vscode settings, keybindings, snippets
-
-## TODO
-
-- setup scripts to install required packages and setup all
-- gnome configs in a script if possible, or switch to hyprland or sumn
