@@ -1,7 +1,8 @@
 return {
-  "nvim-treesitter/nvim-treesitter",
+  "neovim-treesitter/nvim-treesitter",
+  dependencies = { "neovim-treesitter/treesitter-parser-registry" },
   lazy = false,
-  branch = "master",
+  -- branch = "master",
   build = ":TSUpdate",
   opts = {
     auto_install = true,
@@ -24,6 +25,6 @@ return {
   },
 
   config = function(_, opts)
-    require("nvim-treesitter.configs").setup(opts)
+    require("nvim-treesitter").setup(opts)
   end,
 }

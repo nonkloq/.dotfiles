@@ -149,14 +149,13 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-export PATH="$PATH:/home/satz/.config/emacs/bin"
+export PATH="$PATH:$HOME/.config/emacs/bin"
 # NVIM Editor Settings
 export USE_PYRIGHT_LSP=0
 export USE_RUFF_LSP=1
 
-export PATH=$PATH:/home/satz/.spicetify
+export PATH="$HOME/.spicetify:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
-
 
 # disable sort when completing `git checkout`
 zstyle ':completion:*:git-checkout:*' sort false
@@ -179,7 +178,6 @@ zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 
 
 source <(fzf --zsh)
-
 # Load secrets from .env if it exists
 [ -f "$HOME/.env" ] && source "$HOME/.env"
 

@@ -240,7 +240,8 @@
         "*": true,
         "plaintext": true,
         "markdown": false,
-        "scminput": false
+        "scminput": false,
+        "lean4": false
     },
     "github.copilot.nextEditSuggestions.enabled": true,
     "workbench.editor.empty.hint": "hidden",
@@ -255,5 +256,6 @@
     "chat.mcp.gallery.enabled": true,
     "lean4.alwaysAskBeforeInstallingLeanVersions": true,
     "notebook.output.wordWrap": true,
-    "workbench.activityBar.location": "hidden"
+    "workbench.activityBar.location": "hidden",
+    "chat.viewSessions.orientation": "stacked"
 }
