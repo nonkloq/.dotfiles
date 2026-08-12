@@ -76,10 +76,11 @@ plugins=(
   zsh-autosuggestions 
   zsh-syntax-highlighting
   # command-not-found
-  sudo
+  # sudo
 )
 
 source $ZSH/oh-my-zsh.sh
+bindkey '^[[Z' autosuggest-accept # Shift+Tab to accept auto suggest
 
 # User configuration
 
@@ -113,6 +114,10 @@ alias nv="nvim"
 alias ff="clear; fastfetch"
 alias fax="clear; fortune | cowsay -f sus"
 alias akshuly="cowsay -f actually"
+
+alias ls='eza'
+alias l='eza =lah --icons'
+
 export PATH="$HOME/.config/emacs/bin:$PATH"
 export MANPAGER="nvim +Man!"
 export BAT_THEME=gruvbox-dark
@@ -120,7 +125,16 @@ export BAT_THEME=gruvbox-dark
 # add `-p` to bat command to disbale line numbers
 alias fnv='selected=$(fzf -m --preview="bat --color=always --paging=always --pager=less -p {}"); [ -n "$selected" ] && nv "$selected"'
 alias fpv='fzf --preview="bat --color=always --paging=always --pager=less -p {}"'
+function frg {
+    local pattern=$1
 
+    rg --column --line-number --no-heading --color=always "$pattern" |
+    fzf --ansi \
+        --delimiter ':' \
+        --preview "bat --style=numbers --color=always --highlight-line {2} {1}" \
+        --preview-window "right:60%:+{2}/2" \
+        --bind "enter:execute(nvim {1} +{2})"
+}
 
 # for pure-prompt
 # autoload -U promptinit; promptinit

@@ -52,6 +52,16 @@ local user_defined_formatters = {
   rustfmt = {
     prepend_args = { "--config", "max_width=80" },
   },
+  ruff_format = {
+    command = "ruff",
+    args = {
+      "format",
+      "--line-length",
+      "80",
+      "-",
+    },
+    stdin = true,
+  },
 }
 
 local options = {

@@ -17,9 +17,17 @@ return {
     dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
     opts = {
       completions = { blink = { enabled = true } },
-      file_types = { "markdown", "Avante" },
+      bullet = {
+        icons = { "• ", "⚬ " },
+        left_pad = 2,
+      },
+      code = {
+        language_icon = false,
+      },
+      quote = { repeat_linebreak = true },
+      file_types = { "markdown" },
     },
-    ft = { "markdown", "Avante" },
+    ft = { "markdown" },
   },
 
   -- view jupyter notebooks in nvim
@@ -121,5 +129,11 @@ return {
     "mrcjkb/rustaceanvim",
     version = "^6", -- Recommended
     lazy = false, -- This plugin is already lazy
+  },
+
+  -- code diff viewer
+  {
+    "esmuellert/codediff.nvim",
+    cmd = "CodeDiff",
   },
 }

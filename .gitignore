@@ -3,3 +3,4 @@
 lazy-lock.json
 *.db
 output/
+.config/tmux/plugins
