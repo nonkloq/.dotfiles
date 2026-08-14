@@ -116,7 +116,7 @@ alias fax="clear; fortune | cowsay -f sus"
 alias akshuly="cowsay -f actually"
 
 alias ls='eza'
-alias l='eza =lah --icons'
+alias l='eza -lah --icons'
 
 export PATH="$HOME/.config/emacs/bin:$PATH"
 export MANPAGER="nvim +Man!"
