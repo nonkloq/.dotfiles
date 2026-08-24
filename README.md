@@ -1,6 +1,8 @@
 # dotfiles
 
-custom config files for some of the softwares that i use
+custom config files for some of the softwares that i use.
+
+Hyprland+Noctalia dotfiles modified from [cachyos-hypr-noctalia](https://github.com/CachyOS/cachyos-hypr-noctalia) using as the base.
 
 ## Installation
 

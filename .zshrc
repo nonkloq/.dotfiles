@@ -1,5 +1,5 @@
-eval "$(starship init zsh)" # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+# Init starship prompt for zsh
+eval "$(starship init zsh)" 
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -32,7 +32,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # zstyle ':omz:update' frequency 13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS="true"
+DISABLE_MAGIC_FUNCTIONS="true"
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -75,30 +75,69 @@ plugins=(
   fzf-tab 
   zsh-autosuggestions 
   zsh-syntax-highlighting
+  zsh-history-substring-search
+  # fzf 
+  extract
   # command-not-found
   # sudo
 )
 
 source $ZSH/oh-my-zsh.sh
-bindkey '^[[Z' autosuggest-accept # Shift+Tab to accept auto suggest
 
 # User configuration
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# * * * * * * * * * * * * * * * Bindings * * * * * * * * * * * * * * * * *
+
+# Shift+Tab to accept auto suggest
+bindkey '^[[Z' autosuggest-accept 
+
+# * * * * * * * * * * * ENV Exports and configuration * * * * * * * * * * *
+
+# Ignore commands that start with spaces and duplicates.
+export HISTCONTROL=ignoreboth
+
+# Don't add certain commands to the history file.
+export HISTORY_IGNORE="(\&|[bf]g|c|clear|history|exit|q|fax|akshuly*|pwd|* --help)"
+
+# Make new shells get the history lines from all previous
+# shells instead of the default "last window closed" history.
+export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='nvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='nvim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
+# To remove folder highlighting
+export LS_COLORS=""
+
+# Set NVIM as manpage viewer (default less) 
+export MANPAGER="nvim +Man!"
+
+# bat-cli (cat clone) theme variable
+export BAT_THEME="Catppuccin Mocha"
+
+# To render fonts properly inside tmux
+export LC_ALL=en_IN.UTF-8
+
+# PATH appends
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+
+
+
+# * * * * * * * * * * * * * * * Aliases * * * * * * * * * * * * * * * * *
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -108,20 +147,23 @@ bindkey '^[[Z' autosuggest-accept # Shift+Tab to accept auto suggest
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# CUSTOM
+# Custom Aliases
+## QoL
 alias open="xdg-open"
 alias nv="nvim"
 alias ff="clear; fastfetch"
-alias fax="clear; fortune | cowsay -f sus"
-alias akshuly="cowsay -f actually"
+alias ls="eza"
+alias l="eza --icons -lah"
+alias c="clear"
+alias update="sudo pacman -Syuu"
+alias cleanch="sudo pacman -Scc"
+alias rmpkg="sudo pacman -Rsn"
+alias cleanup="sudo pacman -Rsn $(pacman -Qtdq)" #  Cleanup orphaned packages
+alias jctl="journalctl -p 3 -xb" # Get the error messages from journalctl
+# Recent installed packages
+alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl" 
 
-alias ls='eza'
-alias l='eza -lah --icons'
-
-export PATH="$HOME/.config/emacs/bin:$PATH"
-export MANPAGER="nvim +Man!"
-export BAT_THEME=gruvbox-dark
-
+## FZF Utility aliases 
 # add `-p` to bat command to disbale line numbers
 alias fnv='selected=$(fzf -m --preview="bat --color=always --paging=always --pager=less -p {}"); [ -n "$selected" ] && nv "$selected"'
 alias fpv='fzf --preview="bat --color=always --paging=always --pager=less -p {}"'
@@ -136,17 +178,20 @@ function frg {
         --bind "enter:execute(nvim {1} +{2})"
 }
 
-# for pure-prompt
-# autoload -U promptinit; promptinit
-# prompt pure
 
-# EDITOR=nvim
-# To remove folder highlighting
-export LS_COLORS=""
+## Fun
+alias fax="clear; fortune | cowsay -f sus"
+alias akshuly="cowsay -f actually"
 
-# To render fonts properly inside tmux
-export LC_ALL=en_IN.UTF-8
-export LANG=en_IN.UTF-8
+## Adhoc aliases 
+# to test different nvim configs
+alias nv1='NVIM_APPNAME="nvown" nvim'
+alias nv2='NVIM_APPNAME="testt" nvim'
+
+# -----------------------------------------------------------------------------------------
+
+
+# *** *** *** *** *** *** *** *** *** CLI Tool setup *** *** *** *** *** *** *** *** ***
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -163,14 +208,8 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-export PATH="$PATH:$HOME/.config/emacs/bin"
-# NVIM Editor Settings
-export USE_PYRIGHT_LSP=0
-export USE_RUFF_LSP=1
 
-export PATH="$HOME/.spicetify:$PATH"
-export PATH="$HOME/.cargo/bin:$PATH"
-
+## FZF Config
 # disable sort when completing `git checkout`
 zstyle ':completion:*:git-checkout:*' sort false
 
@@ -187,18 +226,12 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 # switch group using `<` and `>`
 zstyle ':fzf-tab:*' switch-group '<' '>'
 
-
 zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 
-
 source <(fzf --zsh)
+
 # Load secrets from .env if it exists
 [ -f "$HOME/.env" ] && source "$HOME/.env"
 
-export PATH="$HOME/.local/bin:$PATH"
-
-# to test different nvim configs
-alias nv1='NVIM_APPNAME="nvown" nvim'
-alias nv2='NVIM_APPNAME="testt" nvim'
-# zoxide config
+# zoxide config and setup
 eval "$(zoxide init zsh --cmd=c)"

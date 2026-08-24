@@ -1,0 +1,398 @@
+[accessibility]
+ui_scale = 1.1500000096857548
+
+[bar]
+order = [ "default" ]
+
+    [bar.default]
+    border_width = 0.0
+    capsule_fill = "outline"
+    capsule_opacity = 0.0
+    capsule_padding = 4.0
+    capsule_radius = 17
+    capsule_thickness = 0.99999998137354851
+    center = [ "clock" ]
+    contact_shadow = false
+    end = [
+        "group:g1",
+        "spacer_1",
+        "tray",
+        "notifications",
+        "spacer_3",
+        "network",
+        "bluetooth",
+        "battery",
+        "volume",
+        "input_volume",
+        "brightness",
+        "spacer_2",
+        "control-center",
+        "spacer_3",
+        "session"
+    ]
+    font_family = "JetBrainsMono Nerd Font"
+    font_weight = 400
+    margin_edge = 8
+    margin_opposite_edge = 2
+    padding = 15
+    radius = 80
+    radius_top_left = 80
+    radius_top_right = 80
+    scale = 1.1000000089406967
+    shadow = true
+    start = [ "workspaces", "spacer_4", "temp", "cpu", "ram", "group:g2" ]
+    thickness = 30
+
+        [[bar.default.capsule_group]]
+        accordion = false
+        accordion_direction = "end"
+        enabled = false
+        fill = "surface_variant"
+        id = "g2"
+        members = [ "network_tx", "network_rx" ]
+        opacity = 0.74000000953674316
+        padding = 11.0
+        radius = 16.0
+
+        [[bar.default.capsule_group]]
+        accordion = false
+        accordion_direction = "end"
+        enabled = true
+        fill = "outline"
+        id = "g1"
+        members = [ "audio_visualizer", "media" ]
+        opacity = 0.0
+        padding = 4.0
+        radius = 17.0
+
+[control_center]
+hidden_tabs = [ "weather", "screen-time" ]
+sidebar = "none"
+sidebar_section = "none"
+
+[desktop_widgets]
+schema_version = 2
+widget_order = []
+
+    [desktop_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget]
+
+[idle]
+behavior_order = [ "lock", "screen-off", "lock-and-suspend" ]
+pre_action_fade_seconds = 10
+
+    [idle.behavior.lock]
+    action = "lock"
+    enabled = true
+    timeout = 600.0
+
+    [idle.behavior.lock-and-suspend]
+    action = "lock_and_suspend"
+    enabled = true
+    timeout = 900.0
+
+    [idle.behavior.screen-off]
+    action = "screen_off"
+    enabled = true
+    timeout = 660.0
+
+[lockscreen]
+blur_intensity = 0.33999999240040779
+tint_intensity = 0.56999998725950718
+
+[lockscreen_widgets]
+enabled = true
+schema_version = 2
+widget_order = [
+    "lockscreen-login-box@eDP-1",
+    "lockscreen-widget-0000000000000003",
+    "lockscreen-widget-0000000000000004",
+    "lockscreen-widget-0000000000000005"
+]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 960.0
+    cy = 1018.0
+    output = "eDP-1"
+    placement_height = 1200.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000003]
+    box_height = 256.0
+    box_width = 448.0
+    cx = 1048.0
+    cy = 408.0
+    output = "eDP-1"
+    placement_height = 1200.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "clock"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000003.settings]
+        background = false
+        background_color = "surface"
+        background_opacity = 0.0
+        background_padding = 0
+        background_radius = 0
+        clock_style = "digital"
+        color = "primary"
+        font_family = "JetBrainsMono NF ExtraBold"
+        format = "{:%I:%M %p}"
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000004]
+    box_height = 224.0
+    box_width = 192.0
+    cx = 728.0
+    cy = 408.0
+    output = "eDP-1"
+    placement_height = 1200.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "clock"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000004.settings]
+        background = false
+        background_opacity = 0.0
+        background_padding = 0
+        background_radius = 0
+        clock_style = "analog"
+        color = "on_surface"
+        font_family = ""
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000005]
+    box_height = 96.0
+    box_width = 624.0
+    cx = 976.0
+    cy = 536.0
+    output = "eDP-1"
+    placement_height = 1200.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "clock"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000005.settings]
+        background = false
+        color = "secondary"
+        font_family = "JetBrainsMono Nerd Font"
+        format = "{:%a, %d %b %Y}"
+        shadow = false
+
+[notification]
+background_opacity = 0.79999998211860657
+
+[plugins]
+enabled = [ "nightwatch75/file-search" ]
+
+[shell]
+app_icon_color = "secondary"
+app_icon_colorize = true
+avatar_path = "/home/satz/Pictures/RandomPics/mooscles.png"
+font_family = "Cantarell"
+lang = "en"
+panel_anchor_bar = "default"
+polkit_agent = true
+
+    [shell.launcher]
+    compact = true
+
+    [shell.panel]
+    floating_layer = "top"
+    open_near_click_control_center = true
+    open_near_click_session = true
+    session_placement = "floating"
+    session_position = "center"
+
+    [shell.screenshot]
+    confirm_region = true
+    directory = "/home/satz/Pictures"
+    pipe_command = "satty -f "
+    pipe_to_command = true
+    remember_last_region = true
+    show_cursor = true
+
+    [shell.shadow]
+    alpha = 0.67999998480081558
+    direction = "center"
+
+[theme]
+builtin = "Ayu"
+community_palette = "Catppuccin Mocha Peach"
+mode = "dark"
+source = "community"
+wallpaper_scheme = "dysfunctional"
+
+    [theme.templates]
+    community_ids = [ "libreoffice", "bat", "lazygit", "yazi" ]
+
+[wallpaper]
+fill_mode = "stretch"
+
+    [wallpaper.automation]
+    recursive = false
+
+    [wallpaper.default]
+    path = "/home/satz/Pictures/Wallpapers/walls-catppuccin-mocha/blueprint.png"
+
+    [wallpaper.last]
+    path = "/home/satz/Pictures/Wallpapers/walls-catppuccin-mocha/blueprint.png"
+
+    [wallpaper.monitors.eDP-1]
+    path = "/home/satz/Pictures/Wallpapers/walls-catppuccin-mocha/blueprint.png"
+
+    [[wallpaper.favorite]]
+    community_palette = "Catppuccin Mocha Peach"
+    palette_source = "community"
+    path = "/home/satz/Pictures/Wallpapers/walls-catppuccin-mocha/blueprint.png"
+    theme_mode = "dark"
+
+    [[wallpaper.favorite]]
+    community_palette = "Catppuccin Mocha Maroon"
+    palette_source = "community"
+    path = "/home/satz/Pictures/Wallpapers/walls-catppuccin-mocha/clouds-3.png"
+    theme_mode = "dark"
+
+    [[wallpaper.favorite]]
+    community_palette = "Catppuccin Mocha Blue"
+    palette_source = "community"
+    path = "/home/satz/Pictures/Wallpapers/walls-catppuccin-mocha/blue-landscape.png"
+    theme_mode = "dark"
+
+    [[wallpaper.favorite]]
+    community_palette = "Catppuccin Mocha Green"
+    palette_source = "community"
+    path = "/home/satz/Pictures/Wallpapers/walls-catppuccin-mocha/beach-path.jpg"
+    theme_mode = "dark"
+
+    [[wallpaper.favorite]]
+    community_palette = "Catppuccin Mocha Mauve-Lavender"
+    palette_source = "community"
+    path = "/home/satz/Pictures/Wallpapers/walls-catppuccin-mocha/cottages-river.png"
+    theme_mode = "dark"
+
+    [[wallpaper.favorite]]
+    community_palette = "Catppuccin Mocha Sapphire"
+    palette_source = "community"
+    path = "/home/satz/Pictures/Wallpapers/walls-catppuccin-mocha/diner-lonely-road.jpg"
+    theme_mode = "dark"
+
+    [[wallpaper.favorite]]
+    community_palette = "Catppuccin Mocha Maroon"
+    palette_source = "community"
+    path = "/home/satz/Pictures/Wallpapers/walls-catppuccin-mocha/tree.jpg"
+    theme_mode = "dark"
+
+    [[wallpaper.favorite]]
+    community_palette = "Catppuccin Mocha Maroon"
+    palette_source = "community"
+    path = "/home/satz/Pictures/Wallpapers/walls-catppuccin-mocha/city-horizon.jpg"
+    theme_mode = "dark"
+
+    [[wallpaper.favorite]]
+    community_palette = "Catppuccin Mocha Pink"
+    palette_source = "community"
+    path = "/home/satz/Pictures/Wallpapers/walls-catppuccin-mocha/sakura-gate.jpg"
+    theme_mode = "dark"
+
+    [[wallpaper.favorite]]
+    community_palette = "Catppuccin Mocha Blue"
+    palette_source = "community"
+    path = "/home/satz/Pictures/Wallpapers/walls-catppuccin-mocha/corals-fish-underwater.jpg"
+    theme_mode = "dark"
+
+[widget.audio_visualizer]
+centered = false
+color_2 = "tertiary"
+interactive = false
+mirrored = false
+
+[widget.battery]
+show_label = false
+
+[widget.brightness]
+show_label = false
+
+[widget.clock]
+format = "{:%I:%M %p %b %d}"
+scale = 1.0
+
+[widget.control-center]
+glyph = "bat"
+scale = 1.1500000000000001
+
+[widget.cpu]
+scale = 0.90000000000000002
+
+[widget.input_volume]
+show_label = false
+
+[widget.media]
+hide_when_no_media = true
+
+[widget.network]
+color = "on_surface"
+show_label = false
+
+[widget.notifications]
+scale = 1.05
+
+[widget.ram]
+scale = 0.90000000000000002
+
+[widget.session]
+scale = 1.1500000000000001
+
+[widget.spacer_1]
+type = "spacer"
+
+[widget.spacer_2]
+length = 15
+type = "spacer"
+
+[widget.spacer_3]
+length = 15
+type = "spacer"
+
+[widget.spacer_4]
+type = "spacer"
+
+[widget.temp]
+scale = 0.90000000000000002
+show_value = true
+
+[widget.volume]
+show_label = false
+
+[widget.workspaces]
+active_pill_size = 2.0
+inactive_pill_size = 1.1000000000000001
+pill_scale = 0.55000000000000004
+show_labels = false

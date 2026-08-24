@@ -54,7 +54,7 @@ map("n", "<Esc>", "<cmd>noh<CR>", { noremap = true, silent = true, desc = "Remov
 local Terminal = require("toggleterm.terminal").Terminal
 local horizontal, vertical, floating, tabbed
 
-map({ "n", "t" }, "<M-h>", function()
+map({ "n", "t" }, "<M-o>", function()
   if not horizontal then
     horizontal = Terminal:new { direction = "horizontal", display_name = "hterm", hidden = true }
   end
