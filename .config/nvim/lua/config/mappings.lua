@@ -156,6 +156,9 @@ map("n", "<leader>ct", ":ColorizerToggle<CR>", { noremap = true, silent = true, 
 -- toggle hardtime
 map("n", "<leader>ht", ":Hardtime toggle<CR>", { noremap = true, silent = true, desc = "Toggle Hardtime" })
 
+-- Code diff toggle
+map("n", "<leader>cd", ":CodeDiff<CR>", { noremap = true, silent = true, desc = "Open CodeDiff viewer" })
+
 -- Key mapping to trigger lspsaga commands
 map("n", "<leader>cr", "<cmd>Lspsaga rename<CR>", { noremap = true, silent = true, desc = "LSP Rename with Lspsaga" })
 map(

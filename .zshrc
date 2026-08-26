@@ -158,7 +158,7 @@ alias c="clear"
 alias update="sudo pacman -Syuu"
 alias cleanch="sudo pacman -Scc"
 alias rmpkg="sudo pacman -Rsn"
-alias cleanup="sudo pacman -Rsn $(pacman -Qtdq)" #  Cleanup orphaned packages
+cleanup() { sudo pacman -Rsn $(pacman -Qtdq) } #  Cleanup orphaned packages
 alias jctl="journalctl -p 3 -xb" # Get the error messages from journalctl
 # Recent installed packages
 alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl" 
@@ -194,18 +194,25 @@ alias nv2='NVIM_APPNAME="testt" nvim'
 # *** *** *** *** *** *** *** *** *** CLI Tool setup *** *** *** *** *** *** *** *** ***
 
 # >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/satz/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/satz/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/satz/miniconda3/etc/profile.d/conda.sh"
+# Lazily load conda: only pay the ~1s init cost the first time
+# `conda`/`activate`/`deactivate` is actually used in a session.
+_conda_lazy_init() {
+    unset -f conda activate deactivate 2>/dev/null
+    __conda_setup="$('/home/satz/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+    if [ $? -eq 0 ]; then
+        eval "$__conda_setup"
     else
-        export PATH="/home/satz/miniconda3/bin:$PATH"
+        if [ -f "/home/satz/miniconda3/etc/profile.d/conda.sh" ]; then
+            . "/home/satz/miniconda3/etc/profile.d/conda.sh"
+        else
+            export PATH="/home/satz/miniconda3/bin:$PATH"
+        fi
     fi
-fi
-unset __conda_setup
+    unset __conda_setup
+}
+conda() { _conda_lazy_init; conda "$@" }
+activate() { _conda_lazy_init; conda activate "$@" }
+deactivate() { _conda_lazy_init; conda deactivate "$@" }
 # <<< conda initialize <<<
 
 
