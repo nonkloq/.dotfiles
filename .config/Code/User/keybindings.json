@@ -11,7 +11,7 @@
     },
     // Alt+h → Toggle terminal
     {
-        "key": "alt+h",
+        "key": "alt+t",
         "command": "workbench.action.terminal.toggleTerminal"
     },
     {

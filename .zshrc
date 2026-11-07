@@ -134,6 +134,7 @@ export LC_ALL=en_IN.UTF-8
 # PATH appends
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.elan/bin:$PATH"
 
 
 
@@ -167,6 +168,7 @@ alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 # add `-p` to bat command to disbale line numbers
 alias fnv='selected=$(fzf -m --preview="bat --color=always --paging=always --pager=less -p {}"); [ -n "$selected" ] && nv "$selected"'
 alias fpv='fzf --preview="bat --color=always --paging=always --pager=less -p {}"'
+alias fop='selected=$(fzf -m --preview="nvim"); [ -n "$selected" ] && open "$selected"'
 function frg {
     local pattern=$1
 
@@ -241,4 +243,4 @@ source <(fzf --zsh)
 [ -f "$HOME/.env" ] && source "$HOME/.env"
 
 # zoxide config and setup
-eval "$(zoxide init zsh --cmd=c)"
+eval "$(zoxide init zsh --cmd=z)"

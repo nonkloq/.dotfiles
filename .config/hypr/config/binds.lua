@@ -161,7 +161,7 @@ end
 hl.bind(mainMod .. " + Right", hl.dsp.focus({ workspace = "+1" }))
 hl.bind(mainMod .. " + Left", hl.dsp.focus({ workspace = "m-1" }))
 hl.bind(mainMod .. " + Down", hl.dsp.focus({ workspace = "emptym" }))
-hl.bind(mainMod .. " + Up", hl.plugin.gloview.toggle)
+-- hl.bind(mainMod .. " + Up", hl.plugin.gloview.toggle)
 
 -- Scroll through existing workspaces & monitors
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "m-1" }))
