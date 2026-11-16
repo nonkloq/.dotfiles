@@ -68,12 +68,16 @@ local options = {
   formatters = user_defined_formatters,
 
   formatters_by_ft = formatters_by_filetype,
-
-  format_on_save = {
+  format_on_save = function(bufnr)
+    if vim.b[bufnr].disable_autoformat then
+      return
+    end
     -- These options will be passed to conform.format()
-    timeout_ms = 10000,
-    lsp_fallback = true,
-  },
+    return {
+      timeout_ms = 10000,
+      lsp_fallback = true,
+    }
+  end,
 }
 
 return {
@@ -89,6 +93,15 @@ return {
       end,
       mode = "n",
       desc = "Format buffer",
+    },
+    {
+      "<leader>cb",
+      function()
+        vim.b.disable_autoformat = not vim.b.disable_autoformat
+        print("Format on save for this buffer: " .. (vim.b.disable_autoformat and "OFF" or "ON"))
+      end,
+      mode = "n",
+      desc = "Toggle format on save for the buffer",
     },
   },
 }

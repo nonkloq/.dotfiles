@@ -1,5 +1,6 @@
 -- CachyOS Hyprland Configuration
 
+require("config.plugins")
 require("config.animations")
 require("config.autostart")
 require("config.colors")
@@ -15,8 +16,6 @@ require("config.workspaces")
 
 -- HyprMod managed settings
 require("hyprland-gui")
-
-
 
 -- For Noctalia Color templates
 require("noctalia").apply_theme()

@@ -41,10 +41,12 @@ hl.bind(mainMod .. " + SHIFT + Right", hl.dsp.window.move({ workspace = "+1" }))
 hl.bind(mainMod .. " + SHIFT + Left", hl.dsp.window.move({ workspace = "m-1" }))
 hl.bind(mainMod .. " + SHIFT + mouse_up", hl.dsp.window.move({ workspace = "m-1" }))
 hl.bind(mainMod .. " + SHIFT + mouse_down", hl.dsp.window.move({ workspace = "+1" }))
-for i = 1, NUM_WPM do
+
+-- add bindings mod + shift + n to move window to that window if exists.
+for i = 1, 10 do
 	local key = i % 10
 	-- Move window to workspace by index
-	hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = "e~" .. i }))
+	hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i })) -- e~ .. i for only move when exists
 end
 
 -- Move & Resize with mouse
@@ -91,7 +93,7 @@ hl.bind("CONTROL + SHIFT + Escape", hl.dsp.exec_cmd(launchPrefix .. TERMINAL .. 
 hl.bind(mainMod .. " + Z", hl.dsp.exec_cmd(noctCall .. "settings-toggle"))
 hl.bind(mainMod .. " + X", hl.dsp.exec_cmd(noctCall .. "panel-toggle control-center"))
 hl.bind(mainMod .. " + slash", hl.dsp.exec_cmd(noctCall .. "panel-toggle launcher"))
--- hl.bind(mainMod .. " + period", hl.dsp.exec_cmd(noctCall .. "panel-toggle launcher /emo"))
+hl.bind(mainMod .. " + e", hl.dsp.exec_cmd(noctCall .. "panel-toggle launcher /emo"))
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd(noctCall .. "session lock"))
 hl.bind(mainMod .. " + ALT + C", hl.dsp.exec_cmd(noctCall .. "panel-toggle session"))
 hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("~/.dotfiles/scripts/screencast.sh --region"))
@@ -161,7 +163,7 @@ end
 hl.bind(mainMod .. " + Right", hl.dsp.focus({ workspace = "+1" }))
 hl.bind(mainMod .. " + Left", hl.dsp.focus({ workspace = "m-1" }))
 hl.bind(mainMod .. " + Down", hl.dsp.focus({ workspace = "emptym" }))
--- hl.bind(mainMod .. " + Up", hl.plugin.gloview.toggle)
+hl.bind(mainMod .. " + Up", hl.plugin.gloview.toggle)
 
 -- Scroll through existing workspaces & monitors
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "m-1" }))

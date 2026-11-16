@@ -152,6 +152,8 @@ export PATH="$HOME/.elan/bin:$PATH"
 ## QoL
 alias open="xdg-open"
 alias nv="nvim"
+alias lg="lazygit"
+alias tree='eza --tree --icons --group-directories-first -I .git'
 alias ff="clear; fastfetch"
 alias ls="eza"
 alias l="eza --icons -lah"
